@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "laser-characterization-tools"
+version = "0.1.0"
+description = "Inspectable spectral mapping and LIV analysis for semiconductor lasers"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Sen Hu"}]
+dependencies = ["numpy>=1.26", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "build>=1.2"]
+
+[project.scripts]
+laser-liv = "laser_characterization.cli:main"
+
+[project.urls]
+Repository = "https://github.com/SpikeHS/laser-characterization-tools"
+Issues = "https://github.com/SpikeHS/laser-characterization-tools/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

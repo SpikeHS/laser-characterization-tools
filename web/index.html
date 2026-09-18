@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flexible Comb Mapping Browse Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <p class="scope-note">Spectral spacing screening · <a href="../README.md">Methods &amp; input format</a> · No mode-locking certification</p><h1 id="pageTitle">Optical Spectrum Comb Number Mapping</h1>
+    <div class="header-controls">
+      <div class="criterion-controls" role="group" aria-label="comb spacing criterion">
+        <label class="criterion-field" for="spacingTargetInput">Spacing (GHz)
+          <input id="spacingTargetInput" type="number" min="0.1" step="0.1" value="200" />
+        </label>
+        <label class="criterion-field" for="spacingToleranceInput">Tolerance (+/- GHz)
+          <input id="spacingToleranceInput" type="number" min="0.1" step="0.1" value="5" />
+        </label>
+        <label class="criterion-field" for="stabilityThresholdInput">Screening depth dB
+          <input id="stabilityThresholdInput" type="number" min="0.1" step="0.1" value="30" />
+        </label>
+        <button id="applySpacingButton" type="button">Apply</button>
+      </div>
+      <div class="criterion-field threshold-preset-field">
+        <span>Preset dB</span>
+        <div class="segmented" role="group" aria-label="mapping criterion">
+          <button type="button" class="threshold-button" data-threshold="3">3 dB</button>
+          <button type="button" class="threshold-button active" data-threshold="6">6 dB</button>
+        </div>
+      </div>
+      <div class="criterion-controls" role="group" aria-label="custom dB criterion">
+        <label class="criterion-field" for="customThresholdInput">Custom dB
+          <input id="customThresholdInput" type="number" min="0.1" step="0.1" value="10" />
+        </label>
+        <button id="applyThresholdButton" type="button">Use dB</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="mapping-panel">
+      <div class="panel-row">
+        <div id="mappingStatus">Load a folder or synthetic demo</div>
+        <div id="criterionStatus">Spacing criterion loading...</div>
+      </div>
+      <svg id="mappingSvg" role="img" aria-label="comb number current-voltage mapping"></svg>
+    </section>
+    <aside class="side-panel">
+      <h2 class="panel-title">Data folder</h2>
+      <p>One device and temperature per folder. Files stay in your browser.</p>
+      <label for="filenameFormat">Filename format</label>
+      <select id="filenameFormat"><option value="explicit">I100mA_V1V.txt (explicit units)</option><option value="legacy">Legacy: first number / 10 mA, second / 1000 V</option></select>
+      <p><button id="loadDemo" type="button">Synthetic demo</button> <button id="exportResults" type="button">Export analysis JSON</button></p>
+      <label class="folder-button" for="folderPicker">Browse</label>
+      <input id="folderPicker" type="file" webkitdirectory directory multiple />
+      <div class="folder-status" id="folderStatus">Load a folder or synthetic demo</div>
+      <h2 class="panel-title section-gap">Selected point</h2>
+      <div id="pointDetails"></div>
+    </aside>
+    <section class="spectrum-panel">
+      <div class="panel-row">
+        <div id="spectrumTitle">Spectrum</div>
+        <div class="spectrum-actions">
+          <div>Guide lines = selected dB criteria; y min = -80 dBm</div>
+          <button id="resetSpectrumZoomButton" type="button">Reset zoom</button>
+        </div>
+      </div>
+      <canvas id="spectrumCanvas"></canvas>
+      <div id="spectrumAnalysisDetails" class="analysis-details"></div>
+    </section>
+  </main>
+  <script src="viewer.js"></script>
+</body>
+</html>

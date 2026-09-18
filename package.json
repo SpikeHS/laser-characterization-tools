@@ -1,0 +1,1 @@
+{"name":"laser-characterization-tools","private":true,"scripts":{"test":"node --test tests-js/*.test.cjs"}}
