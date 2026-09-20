@@ -11,6 +11,29 @@ from measurements and provides entirely synthetic examples.
 
 [中文说明](README.zh-CN.md) · [Methods and formats](docs/methods.md) · [Roadmap](ROADMAP.md)
 
+## Example results
+
+### Spectral mapping and peak selection
+
+![Synthetic current/bias map with 3–9 selected peaks, alongside a spectrum with seven peaks inside the 6 dB threshold.](docs/images/spectral-mapping-example.png)
+
+A synthetic current/bias sweep shows how the viewer's analysis counts peaks
+within 6 dB of the maximum. The highlighted condition has seven selected peaks;
+the separate spacing screen uses a 30 dB depth and a 195–205 GHz interval.
+
+### LIV curves and derived metrics
+
+![Synthetic LIV example showing optical power, voltage, wall-plug efficiency and fitted metrics: 20 mA threshold and 0.4 mW/mA slope.](docs/images/liv-analysis-example.png)
+
+The included CW example yields a 20 mA linear threshold estimate and a
+0.4 mW/mA slope from the explicitly selected 30–80 mA interval. Power,
+voltage and WPE stay visible alongside the summary, so readers can inspect
+the curves behind the numbers.
+
+Both figures use **synthetic inputs processed by the project's analysis
+code**. They are illustrative plots, not browser screenshots or laboratory
+performance results. [Regenerate the figures and inspect their numeric outputs](docs/examples.md).
+
 ## Spectral mapping — no installation
 
 Open `web/index.html` in a modern desktop browser. A **synthetic** 3 × 3
@@ -67,7 +90,8 @@ node --test tests-js/spectrum.test.cjs
 python -m build
 ```
 
-Node.js 20+ is needed only for JavaScript regression tests. CI checks Windows
+Node.js 20+ is needed for JavaScript regression tests and gallery regeneration;
+the browser viewer itself does not require Node.js. CI checks Windows
 and Linux with Python 3.11/3.12. The browser viewer is distributed in the source
 checkout/archive; the Python wheel installs the LIV command only.
 

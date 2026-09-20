@@ -1,0 +1,85 @@
+{
+  "synthetic": true,
+  "spectral": {
+    "spacing_interval_GHz": [
+      195,
+      205
+    ],
+    "count_drop_dB": 6,
+    "screening_drop_dB": 30,
+    "cells": [
+      {
+        "current_mA": 60,
+        "bias_V": 0,
+        "spacing_rule_passed": true,
+        "comb_line_count": 3
+      },
+      {
+        "current_mA": 60,
+        "bias_V": 1,
+        "spacing_rule_passed": true,
+        "comb_line_count": 3
+      },
+      {
+        "current_mA": 60,
+        "bias_V": 2,
+        "spacing_rule_passed": true,
+        "comb_line_count": 3
+      },
+      {
+        "current_mA": 100,
+        "bias_V": 0,
+        "spacing_rule_passed": true,
+        "comb_line_count": 3
+      },
+      {
+        "current_mA": 100,
+        "bias_V": 1,
+        "spacing_rule_passed": true,
+        "comb_line_count": 5
+      },
+      {
+        "current_mA": 100,
+        "bias_V": 2,
+        "spacing_rule_passed": true,
+        "comb_line_count": 5
+      },
+      {
+        "current_mA": 140,
+        "bias_V": 0,
+        "spacing_rule_passed": true,
+        "comb_line_count": 5
+      },
+      {
+        "current_mA": 140,
+        "bias_V": 1,
+        "spacing_rule_passed": true,
+        "comb_line_count": 7
+      },
+      {
+        "current_mA": 140,
+        "bias_V": 2,
+        "spacing_rule_passed": true,
+        "comb_line_count": 9
+      }
+    ]
+  },
+  "liv": {
+    "schema_version": "0.1.0",
+    "method": "explicit-window-linear-extrapolation",
+    "measurement_mode": "CW",
+    "fit_range_mA": [
+      30.0,
+      80.0
+    ],
+    "fit_point_count": 11,
+    "baseline_mW": 0.0,
+    "threshold_estimate_mA": 20.000000000000018,
+    "slope_efficiency_mW_per_mA": 0.4000000000000001,
+    "fit_intercept_mW": -8.000000000000009,
+    "fit_r_squared": 1.0,
+    "max_power_mW": 32.0,
+    "max_wpe_percent": 21.333333333333332,
+    "warnings": []
+  }
+}
