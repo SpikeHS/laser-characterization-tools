@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+Add synthetic spectral-mapping and LIV example figures to the English and
+Chinese READMEs, with generation scripts, numeric outputs and reproduction notes.
+
 ## 0.1.0 — 2026-09-18
 
 First public release of selected laboratory analysis tools. Extracted the
